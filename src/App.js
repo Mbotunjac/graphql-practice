@@ -1,10 +1,15 @@
 import './App.css';
-import CharactersList from './pages/CharactersList';
+import {Routes, Route} from 'react-router-dom';
+import CharacterListPage from './pages/CharacterListPage';
+import CharacterPage from './pages/CharacterPage';
 
 function App() {
   return (
     <div className="App">
-      <CharactersList />
+      <Routes>
+        <Route path='/' element={<CharacterListPage />}/>
+        <Route path='/:id' element={<CharacterPage />}/>
+      </Routes>
     </div>
   );
 }
